@@ -50,7 +50,7 @@ sudo -u postgres psql
 
 psql (13.4 (Ubuntu 13.4-1.pgdg20.04+1))
 
-postgres=# CREATE USER username WITH PASSWORD 'password';
+```postgres=# CREATE USER username WITH PASSWORD 'password';
 postgres-# CREATE DATABASE databasename;
 postgres-# GRANT ALL PRIVILEGES ON DATABASE databasename TO username;
 postgres-# GRANT SELECT PRIVILEGES ON DATABASE databasename TO username;
@@ -60,3 +60,5 @@ postgres-# GRANT UPDATE PRIVILEGES ON DATABASE databasename TO username;
 postgres-# \c databasename (connect to database)
 postgres-# \l (all existing database can be seen)
 postgres-# DROP DATABASE databasename; (delete database)
+
+```
