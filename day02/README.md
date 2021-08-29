@@ -34,14 +34,20 @@ postgres-# DROP DATABASE databasename; [delete database]
 postgres=# CREATE TABLE schemaname.tablename;[create table within schema]
 DROP SCHEMA schemaname CASCADE; [to drop objects of schema and delete schema]
 postgres=# INSERT INTO TABLENAME(COLUMNNAME1,COLUMNNAME2) VALUES ('1','2')[row1 data], ('3','4')[row2 data];[give values according to datatype][by default value NULL]
+<!--YOU CAN SET ANY ONE COLUMN AS PRIMARY KEY -->
 postgres=# SELECT * FROM TABLENAME;[to see data in table]
 postgres=# SELECT (30*2) AS colname;[to get the calculated value under colname]
 postgres=# SELECT COUNT(*) AS "colname" FROM TABLENAME;[to see how many records we have in a table]
 postgres=# SELECT COUNT(queryname) AS "colname" FROM TABLENAME;[to see how many records we have of a particular query]
 postgres=# SELECT CURRENT_TIMESTAMP;[to see current time]
 postgres=# SELECT * FROM TABLENAME WHERE (CONDITION);[to see all data which satisfies the condition ] [AND, OR can be used]
-postgres=# SELECT * FROM TABLENAME WHERE colname LIKE 'firstLetter%';[first character should be same,others can be anything]
-postgres=# SELECT * FROM TABLENAME WHERE colname LIKE 'firstLetter__otherLetters';[second & third letter can be anything,rest should be same as specified in condition]
-
+postgres=# SELECT * FROM TABLENAME WHERE colname BETWEEN START AND END;[to see all data which satisfies the given range] [NOT can be used to exclude the specified range]
+postgres=# SELECT * FROM TABLENAME WHERE colname IN(START,END);[to see all data which satisfies the given range] [last one is included] [NOT can be used to exclude the specified range]
+postgres=# SELECT * FROM TABLENAME WHERE colname LIKE 'firstLetter%';[first character should be same,% for others can be anything]
+postgres=# SELECT * FROM TABLENAME WHERE colname LIKE 'firstLetter__otherLetters';
+[__ for second & third letter can be anything,rest should be same as specified in condition]
+postgres=# SELECT * FROM TABLENAME WHERE colname::newDatatype;[:: to typecast]
+postgres=# UPDATE TABLENAME SET colname = value WHERE CONDITION;[ to update value]
+postgres=# DELETE FROM TABLENAME WHERE CONDITION;[ to delete a row]
 
 ```
