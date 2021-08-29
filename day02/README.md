@@ -35,5 +35,13 @@ postgres=# CREATE TABLE schemaname.tablename;[create table within schema]
 DROP SCHEMA schemaname CASCADE; [to drop objects of schema and delete schema]
 postgres=# INSERT INTO TABLENAME(COLUMNNAME1,COLUMNNAME2) VALUES ('1','2')[row1 data], ('3','4')[row2 data];[give values according to datatype][by default value NULL]
 postgres=# SELECT * FROM TABLENAME;[to see data in table]
+postgres=# SELECT (30*2) AS colname;[to get the calculated value under colname]
+postgres=# SELECT COUNT(*) AS "colname" FROM TABLENAME;[to see how many records we have in a table]
+postgres=# SELECT COUNT(queryname) AS "colname" FROM TABLENAME;[to see how many records we have of a particular query]
+postgres=# SELECT CURRENT_TIMESTAMP;[to see current time]
+postgres=# SELECT * FROM TABLENAME WHERE (CONDITION);[to see all data which satisfies the condition ] [AND, OR can be used]
+postgres=# SELECT * FROM TABLENAME WHERE colname LIKE 'firstLetter%';[first character should be same,others can be anything]
+postgres=# SELECT * FROM TABLENAME WHERE colname LIKE 'firstLetter__otherLetters';[second & third letter can be anything,rest should be same as specified in condition]
+
 
 ```
