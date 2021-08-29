@@ -34,7 +34,7 @@ postgres-# DROP DATABASE databasename; [delete database]
 postgres=# CREATE TABLE schemaname.tablename;[create table within schema]
 DROP SCHEMA schemaname CASCADE; [to drop objects of schema and delete schema]
 postgres=# INSERT INTO TABLENAME(COLUMNNAME1,COLUMNNAME2) VALUES ('1','2')[row1 data], ('3','4')[row2 data];[give values according to datatype][by default value NULL]
-<!--YOU CAN SET ANY ONE COLUMN AS PRIMARY KEY -->
+<!--YOU CAN SET ANY ONE COLUMN AS PRIMARY KEY, IT ACTS AS AN IDENTIFIER FOR A ROW -->
 postgres=# SELECT * FROM TABLENAME;[to see data in table]
 postgres=# SELECT (30*2) AS colname;[to get the calculated value under colname]
 postgres=# SELECT COUNT(*) AS "colname" FROM TABLENAME;[to see how many records we have in a table]
@@ -49,5 +49,12 @@ postgres=# SELECT * FROM TABLENAME WHERE colname LIKE 'firstLetter__otherLetters
 postgres=# SELECT * FROM TABLENAME WHERE colname::newDatatype;[:: to typecast]
 postgres=# UPDATE TABLENAME SET colname = value WHERE CONDITION;[ to update value]
 postgres=# DELETE FROM TABLENAME WHERE CONDITION;[ to delete a row]
-
+<!--YOU CAN CONNECT TABLES USING PRIMARY KEY -->
+<!--FOREIGN KEY IS THAT DATA IN A TABLE WHICH CONNECTS TWO TABLES AND IT SHOULD EXIST IN BOTH TABLES-->
+[while creating tables you can write GENERATED ALWAYS AS IDENTITY which will give data automatically if you don't provide data according to the sequence no. going on]
+<!--  to connect tables [follow these steps inside create table] -->
+postgres=# CONSTRAINT name[name not necessary, postgres can give any name if you don't]
+postgres=# FOREIGN KEY (colname which is in both table); [we have here given the constrains]
+postgres=# REFERENCES TABLENAME(the colname which has been set as foreign key); [specify the tablename to which you want to connect]
+postgres=# ON DELETE CASCADE;[if the foreign key value row is not present in the 1st table then delete the row with that foreign key value from this table also] [only keep the rows which is in both table]
 ```
