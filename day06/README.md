@@ -1,4 +1,4 @@
-# Event Loop and Async Programming (Must watch)
+# Event Loop and Async Programming
 
 Imagine we are making a database query that takes 10 seconds to run. In
 synchronous programming, our program will wait for 10 seconds for the query to
