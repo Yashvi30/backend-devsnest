@@ -5,7 +5,7 @@ installed using `npm i` before use.
 
 ---
 
-THA available in `ws/` folder. To use run with `DEBUG=ws:* npm start` and make
+To use run with `DEBUG=ws:* npm start` and make
 a GET request to `localhost:3000/users/files/filename.txt` to access
 `filename.txt` in `ws/public/`.
 
