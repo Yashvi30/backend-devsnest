@@ -6,7 +6,7 @@ var register = require("../controllers/register");
 /* GET home page. */
 router.get("/", function (req, res, next) {
   const session = req.session;
-  session.username = "bivas";
+  session.username = "fyewfduyqwduyj";
   res.render("index", { title: "Express" });
 });
 

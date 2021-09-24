@@ -24,7 +24,7 @@ const register = async (req, res) => {
       const newUser = new User({
         email: email.toLowerCase(),
         password: hash,
-        fullName: "Bivas",
+        fullName: fullName,
       });
       const savedUser = await newUser.save();
       res.status(201).send(savedUser);
