@@ -13,7 +13,7 @@ const saltRounds = 10;
  */
 
 const register = async (req, res) => {
-  const { email, password } = req.body;
+  const { email, password, fullName } = req.body;
   try {
     const alreadyExists = await User.findOne({ where: { email } });
     if (alreadyExists) {
@@ -24,9 +24,10 @@ const register = async (req, res) => {
       const newUser = new User({
         email: email.toLowerCase(),
         password: hash,
-        fullName: "Bivas",
+        fullName: fullName,
       });
       const savedUser = await newUser.save();
+      console.log(savedUser);
       res.status(201).send(savedUser);
     }
   } catch (err) {

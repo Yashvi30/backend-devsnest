@@ -1,5 +1,4 @@
-const emailValidate = require("../utils/emailValidate");
-const passwordValidate = require("../utils/passwordValidate");
+const { emailValidate, passwordValidate } = require("../utils/validate");
 
 /**
  * @param {*} req
