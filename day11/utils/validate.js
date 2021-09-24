@@ -8,4 +8,4 @@ const passwordValidate = (password) => {
   return re.test(password);
 };
 
-(module.exports = emailValidate), passwordValidate;
+module.exports = { emailValidate, passwordValidate };
