@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('day14:server');
+var debug = require('debug')('day11:server');
 var http = require('http');
 
 /**
