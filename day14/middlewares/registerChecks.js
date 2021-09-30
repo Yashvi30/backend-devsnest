@@ -1,15 +1,16 @@
 const { emailValidate, passwordValidate } = require("../utils/validate");
-
 /**
+ *
  * @param {*} req
  * @param {*} res
  * @param {*} next
  * @description
- * email validate - string
+ * * email validate - string
  * password validate
  * password == confirm
  */
 const registerInitialCheck = (req, res, next) => {
+  console.log("coming here");
   const { email, password, confirmPassword } = req.body;
   if (
     typeof email === "string" &&
@@ -23,7 +24,7 @@ const registerInitialCheck = (req, res, next) => {
   ) {
     next();
   } else {
-    res.status(401).send("Initial Checks failed");
+    res.status(401).send("Initial checks fail");
   }
 };
 
